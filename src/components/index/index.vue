@@ -40,7 +40,10 @@
 			</el-aside>
 			<el-container>
 				<el-header>头部</el-header>
-				<el-main>身体</el-main>
+				<el-main>
+					<transition name="fade" mode="out-in"><router-view /></transition>
+					身体
+				</el-main>
 				<el-footer>足部</el-footer>
 			</el-container>
 		</el-container>
@@ -55,6 +58,9 @@ export default {
 	methods: {
 		handleOpen(key, keyPath) {
 			console.log(key, keyPath);
+			if (key === 'nav_01') {
+				this.$router.push({ path: '/index/main' });
+			}
 		},
 		handleClose(key, keyPath) {
 			console.log(key, keyPath);
