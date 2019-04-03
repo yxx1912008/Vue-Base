@@ -22,4 +22,9 @@ html {
 	margin: auto;
 	padding: 0;
 }
+
+.container {
+	width: 100%;
+	height: 100%;
+}
 </style>

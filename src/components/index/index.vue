@@ -1,13 +1,47 @@
 <template>
 	<div class="container">
-		<el-container>
-			<el-header>页头</el-header>
+		<el-container style="height: 100%;width: 100%;">
+			<el-aside width="200px" height="100%">
+				<el-menu default-active="2" class="nav" @open="handleOpen" @close="handleClose" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+					<h5 style="color: #fff;">自定义颜色</h5>
+					<el-submenu index="nav_01">
+						<template slot="title">
+							<i class="el-icon-location"></i>
+							<span>导航一</span>
+						</template>
+						<el-menu-item-group>
+							<template slot="title">
+								分组一
+							</template>
+							<el-menu-item index="1-1">选项1</el-menu-item>
+							<el-menu-item index="1-2">选项2</el-menu-item>
+						</el-menu-item-group>
+						<el-menu-item-group title="分组2"><el-menu-item index="1-3">选项3</el-menu-item></el-menu-item-group>
+						<el-submenu index="1-4">
+							<template slot="title">
+								选项4
+							</template>
+							<el-menu-item index="1-4-1">选项1</el-menu-item>
+						</el-submenu>
+					</el-submenu>
+					<el-menu-item index="2">
+						<i class="el-icon-menu"></i>
+						<span slot="title">导航二</span>
+					</el-menu-item>
+					<el-menu-item index="3" disabled>
+						<i class="el-icon-document"></i>
+						<span slot="title">导航三</span>
+					</el-menu-item>
+					<el-menu-item index="4">
+						<i class="el-icon-setting"></i>
+						<span slot="title">导航四</span>
+					</el-menu-item>
+				</el-menu>
+			</el-aside>
 			<el-container>
-				<el-aside width="200px">边框</el-aside>
-				<el-container>
-					<el-main>Main</el-main>
-					<el-footer><el-row style="border-radius: 2px;border: #9DA0A4 solid thin;" type="flex" class="row-bg" justify="end">@购物猫 2018</el-row></el-footer>
-				</el-container>
+				<el-header>头部</el-header>
+				<el-main>身体</el-main>
+				<el-footer>足部</el-footer>
 			</el-container>
 		</el-container>
 	</div>
@@ -17,9 +51,21 @@
 export default {
 	data() {
 		return {};
+	},
+	methods: {
+		handleOpen(key, keyPath) {
+			console.log(key, keyPath);
+		},
+		handleClose(key, keyPath) {
+			console.log(key, keyPath);
+		}
 	}
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+.nav {
+	height: 100%;
+}
+</style>
