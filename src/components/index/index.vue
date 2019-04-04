@@ -2,7 +2,7 @@
 	<div class="container">
 		<el-container style="height: 100%;width: 100%;">
 			<el-aside width="200px" height="100%">
-				<el-menu default-active="2" class="nav" @open="handleOpen" @close="handleClose" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+				<el-menu default-active="2" style="height: 100%;" @open="handleOpen" @close="handleClose" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
 					<h5 style="color: #fff;">自定义颜色</h5>
 					<el-submenu index="nav_01">
 						<template slot="title">
@@ -70,8 +70,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.nav {
-	height: 100%;
-}
-</style>
+<style scoped></style>
